@@ -64,8 +64,6 @@ teacher\_id VARCHAR(20)  NOT NULL               # 授课教师编号（外键，
 
 \---
 
-
-
 \## 表名: score
 
 说明: 存储学生选课成绩信息
@@ -76,13 +74,13 @@ teacher\_id VARCHAR(20)  NOT NULL               # 授课教师编号（外键，
 
 字段:
 
-id         INT          NOT NULL  AUTO\_INCREMENT  PRIMARY KEY  # 自增ID（主键）
+id         INT          NOT NULL  AUTO\_INCREMENT  PRIMARY KEY  # 自增ID(主键)
 
-student\_id VARCHAR(20)  NOT NULL                 # 学号（外键，关联student表）
+student\_id VARCHAR(20)  NOT NULL                 # 学号（外键）
 
-course\_id  VARCHAR(20)  NOT NULL                 # 课程号（外键，关联course表）
+course\_id  VARCHAR(20)  NOT NULL                 # 课程号（外键）
 
-score      DECIMAL(5,2)                          # 成绩（0-100，保留两位小数）
+score      DECIMAL(5,2)                          # 成绩
 
-create\_time DATETIME                             # 成绩录入时间
+exam\_type  VARCHAR(20)                           # 【新增】考试类型：期中/期末
 
