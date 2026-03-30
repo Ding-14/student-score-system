@@ -38,3 +38,49 @@ subject      VARCHAR(30)    NOT NULL                    # 主讲课程（非空�
 
 phone        VARCHAR(11)                               # 联系电话
 
+
+
+
+
+\## 表名: course
+
+说明: 存储课程基本信息
+
+主键: course\_id (课程号)
+
+
+
+字段:
+
+course\_id  VARCHAR(20)  NOT NULL  PRIMARY KEY  # 课程号（主键，非空）
+
+course\_name VARCHAR(50) NOT NULL               # 课程名称（非空）
+
+credit     INT          NOT NULL               # 学分（非空）
+
+teacher\_id VARCHAR(20)  NOT NULL               # 授课教师编号（外键，关联teacher表）
+
+
+
+\---
+
+\## 表名: score
+
+说明: 存储学生选课成绩信息
+
+主键: id (自增ID)
+
+
+
+字段:
+
+id         INT          NOT NULL  AUTO\_INCREMENT  PRIMARY KEY  # 自增ID(主键)
+
+student\_id VARCHAR(20)  NOT NULL                 # 学号（外键）
+
+course\_id  VARCHAR(20)  NOT NULL                 # 课程号（外键）
+
+score      DECIMAL(5,2)                          # 成绩
+
+exam\_type  VARCHAR(20)                           # 【新增】考试类型：期中/期末
+
